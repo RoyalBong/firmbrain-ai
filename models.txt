@@ -1,0 +1,27 @@
+# FirmBrain.AI -- model reference (Phase 1 low-spec dev machine)
+#
+# Machine: 8 GB RAM, CPU-only (Intel UHD, no CUDA), 5400rpm HDD.
+# Do NOT add 7B+ models here while this is the test machine -- they risk
+# OS swapping/freezing. Production model sizing is a Phase 2+ decision.
+#
+# File format (whitespace separated): NAME  TIER  PURPOSE
+# TIER:
+#   required  -- pulled by scripts/setup.ps1 and scripts/setup.sh by default
+#   optional  -- pulled only with -IncludeOptional / --include-optional
+#
+# Manual equivalent of what the setup scripts run:
+#   ollama pull qwen2.5:1.5b       # default chat model (~1 GB): fastest option that fits 8 GB RAM
+#   ollama pull nomic-embed-text   # embedding model for RAG (~274 MB): always required
+#   ollama pull gemma2:2b          # alternative chat model (~1.6 GB): try only if 1.5b quality is not enough
+#   ollama pull phi3:mini          # optional reasoning fallback (~2.3 GB): noticeably slower on this CPU
+#
+# One-line rationale for each model (project-context.md Section 3a):
+#   qwen2.5:1.5b        -- default: smallest model that answers well; fastest on this CPU.
+#   gemma2:2b           -- alternative: a bit larger, often better quality, still fits the RAM budget.
+#   nomic-embed-text    -- embeddings: tiny and fast; the standard RAG embedder in every phase.
+#   phi3:mini           -- fallback: stronger multi-step reasoning, but slow. Optional only.
+
+qwen2.5:1.5b        required    Default chat model (~1 GB). Start here.
+nomic-embed-text    required    Embedding model for RAG. Always required.
+gemma2:2b           optional    Alternate chat (~1.6 GB) if 1.5b quality is insufficient.
+phi3:mini           optional    Fallback reasoning (~2.3 GB). Noticeably slower on this CPU.

@@ -1,0 +1,37 @@
+# Secrets and local env
+.env
+.env.local
+*.pem
+*.key
+
+# Office documents (never commit client or bulk source files)
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.csv
+*.ppt
+*.pptx
+
+# Keep README files inside data folders
+!**/README.md
+
+# Ollama / AnythingLLM local state if accidentally copied into the repo
+.ollama/
+ollama-models/
+anythingllm-storage/
+storage/
+
+# OS and editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Logs and temp
+*.log
+tmp/
+temp/
