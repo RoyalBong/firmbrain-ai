@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FirmBrain.AI
 
 Private, offline AI assistant for a Chartered Accountancy firm. Staff will eventually open a browser on the office LAN and ask questions grounded in the firm’s own GST, audit, ROC, ITR, and (later) client documents. **No client data may leave the local network.**
@@ -136,3 +137,7 @@ Client files never go in git. Workspace “Client Files” is Phase 4 on the off
 ## License cost
 
 Ollama and AnythingLLM are open source. Software licensing for this stack is ₹0. Hardware and setup time are the costs.
+=======
+# firmbrain-ai
+Offline, LAN-based AI assistant for a CA firm — RAG-powered document Q&amp;A over GST, ROC, ITR, and audit knowledge, running entirely on local hardware with zero cloud dependency.
+>>>>>>> 5083a1ec944767d6e4ed5764fb4328fe2c6a91c0
