@@ -75,7 +75,7 @@ The builder is currently testing on a personal machine with **significantly belo
 
 | Model | Approx. size | Purpose |
 |---|---|---|
-| `qwen2.5:1.5b` | ~1 GB | Default/fastest — start here |
+| `qwen2.5:1.5b` | ~1 GB | Default/fastest — start here. **Confirmed unreliable on nuanced terminology (ITR/ITC confusion) during Block ITR testing — see test-checklist.md.** |
 | `gemma2:2b` | ~1.6 GB | Alternative if 1.5b quality is insufficient |
 | `phi3:mini` (3.8B) | ~2.3 GB | Fallback if better reasoning is needed for complex queries; expect noticeably slower responses |
 | Avoid 7B and above | — | High risk of unacceptable slowness or memory pressure on this hardware |
