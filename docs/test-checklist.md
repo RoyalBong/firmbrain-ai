@@ -34,6 +34,8 @@ Ask 3-5 real staff questions per domain. Fill the last two columns in for every 
 |---|---|---|---|---|
 | GST: e.g. "What is the GSTR-3B due date for July?" | `GST-SAMPLE-due-date-workflow.md` | | | |
 | GST: e.g. "When is ITC blocked under section 17(5)?" | `GST-SAMPLE-blocked-credit-17-5.md` | | | |
+| What is Block ITR? | `GST-SAMPLE-blocked-credit-17-5.md` | N | N | Doc explicitly defines "Block ITR" = blocked ITC; model confused ITR/ITC terminology, never cited source, said term wasn't defined despite it being spelled out. |
+| What does blocked credit mean in the sample blocked credit overview? (doc's own test question) | `GST-SAMPLE-blocked-credit-17-5.md` | Partial | N | Core definition roughly correct but repeats ITR/ITC confusion; claims term isn't defined despite being handed the definition directly. Reproducible failure. |
 | ROC: e.g. "When is Form AOC-4 due for the last financial year?" | `ROC Compliance` workspace doc | | | |
 | ROC: e.g. "What is Form DIR-3 KYC used for?" | `ROC Compliance` workspace doc | | | |
 | ITR: e.g. "Which ITR form applies to a salaried employee?" | `ITR Filing Reference` workspace doc | | | |
