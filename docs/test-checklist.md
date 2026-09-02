@@ -30,6 +30,8 @@ Copy this file for each testing round and fill it in as you go. A passing answer
 
 Ask 3-5 real staff questions per domain. Fill the last two columns in for every row.
 
+**Four consecutive runs of the Block ITR question, including one after retrieval-setting tuning, all show qwen2.5:1.5b confusing ITR/ITC terminology and inconsistently citing Income Tax Law vs CGST Act. Retrieval is confirmed working correctly (correct source document always present in Sources). Root cause isolated to model comprehension — proceeding to test qwen2.5:3b as next step.**
+
 **Sources panel confirmed correct document retrieval for both Block ITR tests — failures are attributable to model generation quality, not the RAG pipeline.**
 
 | Question Asked | Expected Source Doc | Answer Correct (Y/N) | Citation Shown (Y/N) | Notes |
@@ -38,6 +40,7 @@ Ask 3-5 real staff questions per domain. Fill the last two columns in for every 
 | GST: e.g. "When is ITC blocked under section 17(5)?" | `GST-SAMPLE-blocked-credit-17-5.md` | | | |
 | What is Block ITR? | `GST-SAMPLE-blocked-credit-17-5.md` | N | Y | Correct source document WAS retrieved and shown in Sources panel (confirmed via screenshot). However, all 8 workspace documents were retrieved as context for this single query — over-broad retrieval, not a targeted match. Despite having the correct doc, qwen2.5:1.5b confused ITR/ITC terminology, hedged incorrectly, and claimed the term "does not appear to be an official or legal definition" despite it being defined directly in the retrieved text. Response time: 3m17s at 0.90 tok/s. Root cause is generation/comprehension failure, not retrieval failure. |
 | What does blocked credit mean in the sample blocked credit overview? (doc's own suggested test question) | `GST-SAMPLE-blocked-credit-17-5.md` | Partial | Y | Same over-broad retrieval pattern as above. Core definition roughly correct this time, but repeated the same ITR/ITC confusion and again incorrectly claimed the term wasn't defined. Reproducible failure across two phrasings — confirms this is a model comprehension limitation (qwen2.5:1.5b), not a retrieval/pipeline bug. |
+| What is Block ITR? (4th run, after retrieval tuning) | `GST-SAMPLE-blocked-credit-17-5.md` | N | Y | Changed Max Context Snippets to 4 and Similarity Threshold to Medium before this run — result was nearly identical to prior runs (same 9 sources retrieved, same ITR/ITC confusion). Confirms retrieval-setting tuning has no effect at this document-set size (8-9 short, topically similar GST docs are all judged "similar enough" regardless of threshold). Failure is conclusively isolated to qwen2.5:1.5b generation quality, not retrieval configuration. Next step: test qwen2.5:3b with same settings held constant. |
 | ROC: e.g. "When is Form AOC-4 due for the last financial year?" | `ROC Compliance` workspace doc | | | |
 | ROC: e.g. "What is Form DIR-3 KYC used for?" | `ROC Compliance` workspace doc | | | |
 | ITR: e.g. "Which ITR form applies to a salaried employee?" | `ITR Filing Reference` workspace doc | | | |
