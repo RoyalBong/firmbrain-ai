@@ -14,14 +14,19 @@
 #   ollama pull nomic-embed-text   # embedding model for RAG (~274 MB): always required
 #   ollama pull gemma2:2b          # alternative chat model (~1.6 GB): try only if 1.5b quality is not enough
 #   ollama pull phi3:mini          # optional reasoning fallback (~2.3 GB): noticeably slower on this CPU
+#   ollama pull qwen2.5:3b         # comparison model (~1.9 GB): being evaluated vs 1.5b for GST terminology
 #
 # One-line rationale for each model (project-context.md Section 3a):
 #   qwen2.5:1.5b        -- default: smallest model that answers well; fastest on this CPU.
 #   gemma2:2b           -- alternative: a bit larger, often better quality, still fits the RAM budget.
 #   nomic-embed-text    -- embeddings: tiny and fast; the standard RAG embedder in every phase.
 #   phi3:mini           -- fallback: stronger multi-step reasoning, but slow. Optional only.
+#   qwen2.5:3b          -- comparison: being evaluated vs 1.5b for better accuracy on nuanced GST
+#                         terminology (1.5b showed ITR/ITC confusion in Block ITR testing -- see
+#                         test-checklist.md); tradeoff is slightly slower on the low-spec dev machine.
 
 qwen2.5:1.5b        required    Default chat model (~1 GB). Start here.
 nomic-embed-text    required    Embedding model for RAG. Always required.
 gemma2:2b           optional    Alternate chat (~1.6 GB) if 1.5b quality is insufficient.
 phi3:mini           optional    Fallback reasoning (~2.3 GB). Noticeably slower on this CPU.
+qwen2.5:3b          optional    Evaluation vs 1.5b on GST/ITC terminology (~1.9 GB) -- see test-checklist.md. Slightly slower than 1.5b on this CPU.
