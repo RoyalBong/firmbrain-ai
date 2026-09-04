@@ -1,27 +1,39 @@
-# SAMPLE — GST due-date workflow (practitioner checklist)
+# GST Due-Date Workflow & QRMP Scheme
 
-**SAMPLE STUDY NOTE for FirmBrain.AI Phase 1 RAG testing.**  
-**Due dates are not printed here as numbers** because they are frequently notified and differ by turnover and return type. Use the GST portal / latest CBIC tracker for actual dates.
+## Monthly/quarterly close checklist
 
-## Document phrase: monthly close checklist
+1. Close the sales register and match against e-invoice/IRN data where applicable.
+2. Prepare **GSTR-1** outward supply data (or IFF, if on QRMP).
+3. Reconcile **GSTR-2B** against the purchase book; identify ineligible and blocked credit.
+4. Prepare **GSTR-3B**, computing tax, interest, and late fee if applicable.
+5. Pay tax via the Electronic Cash Ledger / Credit Ledger as permitted.
+6. File returns in the prescribed sequence (portal enforces GSTR-1 before GSTR-3B in most cases).
 
-A typical practitioner month-end GST workflow:
+## QRMP Scheme (Quarterly Return, Monthly Payment)
 
-1. Close sales register and match with e-invoice / IRN data where applicable.
-2. Prepare **GSTR-1** outward supply data (or IFF, if using the QRMP scheme).
-3. Reconcile **GSTR-2B** vs purchase book; identify ineligible and blocked credit.
-4. Prepare **GSTR-3B** and compute tax, interest, and late fee if any.
-5. Pay tax via Electronic Cash Ledger / Credit Ledger as allowed.
-6. File returns in the **prescribed sequence** for the period (portal validations apply).
+**Eligibility**: registered taxpayers with aggregate annual turnover (AATO) up to ₹5 crore in the preceding financial year.
 
-## Document phrase: QRMP
+**How it works**: file GSTR-1 and GSTR-3B quarterly, but pay tax monthly (via GST PMT-06 challan) for the first two months of the quarter, using either the Fixed Sum Method or Self-Assessment Method. Reduces total annual returns from 24 to 8.
 
-**QRMP** (Quarterly Return Monthly Payment) is a scheme for eligible smaller taxpayers: quarterly GSTR-1/3B with monthly tax payment via PMT-06, subject to current eligibility.
+**Invoice Furnishing Facility (IFF)**: lets QRMP taxpayers upload B2B invoices monthly (even though GSTR-1 itself is quarterly), so buyers can claim ITC earlier via their GSTR-2B.
 
-## Document phrase: interest
+**Losing eligibility**: if turnover crosses ₹5 crore in any quarter of the current year, the taxpayer becomes ineligible for QRMP from the next quarter and must switch to monthly filing.
 
-Interest on delayed tax is charged under Section 50 as currently worded (including net-tax vs gross debates historically settled by law — apply the section in force, not this sample).
+## Standard due dates (verify current notifications — these shift periodically)
+
+| Return | Frequency | Typical due date |
+|---|---|---|
+| GSTR-1 (monthly) | Monthly | 11th of next month |
+| GSTR-1 (QRMP) | Quarterly | 13th of month after quarter |
+| GSTR-3B (monthly) | Monthly | 20th of next month |
+| GSTR-3B (QRMP) | Quarterly | 22nd/24th of month after quarter (varies by state) |
+| GSTR-9 / GSTR-9C | Annual | 31st December following the FY |
+
+## Interest on delayed tax
+Charged under Section 50 of the CGST Act on net tax liability paid late (verify current rate and computation basis in force, as this has been subject to legislative clarification historically).
+
+## Source note
+Based on CGST Act provisions and CBIC QRMP scheme notifications (42nd GST Council Meeting) as of 2026. Due dates are notification-driven and change — always confirm on the GST portal / latest CBIC tracker before relying on a specific date.
 
 ## Citation test question
-
-“What is QRMP according to the sample GST due-date workflow note?”
+"What is QRMP according to the sample GST due-date workflow note?"
